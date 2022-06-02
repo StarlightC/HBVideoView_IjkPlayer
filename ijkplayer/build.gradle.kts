@@ -54,7 +54,7 @@ dependencies {
 
     implementation("com.google.auto.service:auto-service:1.0")
     kapt("com.google.auto.service:auto-service:1.0")
-    implementation("com.starlightc.video:hbvideoview_core:0.0.5")
+    implementation("com.starlightc.video:hbvideoview_core:0.0.6")
 }
 
 afterEvaluate {
@@ -70,11 +70,10 @@ afterEvaluate {
         }
         publications {
             create<MavenPublication>("release") {
+                from(components["release"])
                 groupId = "com.starlightc.ijkplayer"
                 artifactId = "hbvideoview_ijkplayer"
-                version = "0.0.5"
-
-                artifact("$buildDir/outputs/aar/ijkplayer-release.aar")
+                version = "0.0.8"
             }
         }
     }

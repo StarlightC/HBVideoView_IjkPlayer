@@ -15,7 +15,9 @@ import com.starlightc.video.core.infomation.PlayInfo
 import com.starlightc.video.core.infomation.PlayerState
 import com.starlightc.video.core.infomation.VideoDataSource
 import com.starlightc.video.core.infomation.VideoSize
+import com.starlightc.video.core.interfaces.ErrorProcessor
 import com.starlightc.video.core.interfaces.IMediaPlayer
+import com.starlightc.video.core.interfaces.InfoProcessor
 import com.starlightc.video.core.interfaces.Settings
 import tv.danmaku.ijk.media.player.IjkMediaPlayer
 import tv.danmaku.ijk.media.player.misc.ITrackInfo
@@ -169,6 +171,14 @@ class IJkPlayer: IMediaPlayer<IjkMediaPlayer>,
         this.context = context
         lifecycleRegistry = LifecycleRegistry(this)
         lifecycleRegistry.currentState = Lifecycle.State.CREATED
+    }
+
+    override fun getErrorProcessor(): ErrorProcessor {
+        return IjkErrorProcessor()
+    }
+
+    override fun getInfoProcessor(): InfoProcessor {
+        return IjkInfoProcessor()
     }
 
     /**
