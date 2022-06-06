@@ -50,7 +50,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
-    implementation("com.github.StarlightC:HBVideoView_Core:v0.1.0")
+    implementation("com.github.StarlightC:HBVideoView_Core:v0.1.1")
 }
 
 afterEvaluate {
@@ -60,7 +60,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.starlightc"
                 artifactId = "hbvideoview_ijkplayer"
-                version = "0.1.0"
+                version = "0.1.1"
             }
         }
     }
