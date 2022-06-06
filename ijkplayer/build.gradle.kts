@@ -1,5 +1,3 @@
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -52,24 +50,15 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
-    implementation("com.starlightc.video:hbvideoview_core:0.1.0")
+    implementation("com.github.StarlightC:HBVideoView_Core:v0.1.0")
 }
 
 afterEvaluate {
     publishing {
-        repositories {
-            maven {
-                url = uri("https://maven.pkg.github.com/StarlightC/HBVideoView_Ijkplayer")
-                credentials {
-                    username = gradleLocalProperties(rootDir).getProperty("GITHUB_USER").toString()
-                    password = gradleLocalProperties(rootDir).getProperty("GITHUB_TOKEN").toString()
-                }
-            }
-        }
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-                groupId = "com.starlightc.ijkplayer"
+                groupId = "com.github.starlightc"
                 artifactId = "hbvideoview_ijkplayer"
                 version = "0.1.0"
             }
