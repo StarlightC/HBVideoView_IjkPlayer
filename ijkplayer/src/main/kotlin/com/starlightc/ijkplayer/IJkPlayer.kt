@@ -8,7 +8,6 @@ import android.view.SurfaceHolder
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.MutableLiveData
-import com.google.auto.service.AutoService
 import com.starlightc.video.core.Constant
 import com.starlightc.video.core.SimpleLogger
 import com.starlightc.video.core.infomation.PlayInfo
@@ -28,7 +27,6 @@ import tv.danmaku.ijk.media.player.misc.ITrackInfo
  *
  * IjkMediaPlayer封装
  */
-@AutoService(IMediaPlayer::class)
 class IJkPlayer: IMediaPlayer<IjkMediaPlayer>,
     tv.danmaku.ijk.media.player.IMediaPlayer.OnPreparedListener,
     tv.danmaku.ijk.media.player.IMediaPlayer.OnCompletionListener,

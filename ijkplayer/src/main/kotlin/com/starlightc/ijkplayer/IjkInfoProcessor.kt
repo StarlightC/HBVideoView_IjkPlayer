@@ -1,6 +1,5 @@
 package com.starlightc.ijkplayer
 
-import com.google.auto.service.AutoService
 import com.starlightc.video.core.Constant
 import com.starlightc.video.core.SimpleLogger
 import com.starlightc.video.core.interfaces.InfoProcessor
@@ -12,8 +11,6 @@ import tv.danmaku.ijk.media.player.IMediaPlayer
  *
  * TODO: description
  */
-
-@AutoService(InfoProcessor::class)
 class IjkInfoProcessor: InfoProcessor {
     /**
      * 返回InfoProcessor名称

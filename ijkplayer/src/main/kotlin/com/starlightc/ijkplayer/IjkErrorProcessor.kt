@@ -1,8 +1,6 @@
 package com.starlightc.ijkplayer
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
-import com.google.auto.service.AutoService
+
 import com.starlightc.video.core.Constant
 import com.starlightc.video.core.SimpleLogger
 import com.starlightc.video.core.interfaces.ErrorProcessor
@@ -12,7 +10,6 @@ import tv.danmaku.ijk.media.player.IMediaPlayer
  * @author StarlightC
  * @since 2022/4/26
  */
-@AutoService(ErrorProcessor::class)
 class IjkErrorProcessor: ErrorProcessor {
     override fun getName(): String {
         return Constant.IJK_ERROR_PROCESSOR
