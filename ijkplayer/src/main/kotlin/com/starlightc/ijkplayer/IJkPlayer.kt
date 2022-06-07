@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.view.Surface
 import android.view.SurfaceHolder
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.MutableLiveData
 import com.starlightc.video.core.Constant
@@ -167,7 +168,11 @@ class IJkPlayer: IMediaPlayer<IjkMediaPlayer>,
 
     override fun create(context: Context) {
         this.context = context
-        lifecycleRegistry = LifecycleRegistry(this)
+        lifecycleRegistry = if (context is LifecycleOwner) {
+            LifecycleRegistry(context)
+        } else {
+            LifecycleRegistry(this)
+        }
         lifecycleRegistry.currentState = Lifecycle.State.CREATED
     }
 
