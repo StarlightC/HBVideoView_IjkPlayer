@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 30
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 32
+        targetSdk = 30
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -60,7 +60,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.starlightc"
                 artifactId = "hbvideoview_ijkplayer"
-                version = "0.1.4"
+                version = "0.1.6"
             }
         }
     }
