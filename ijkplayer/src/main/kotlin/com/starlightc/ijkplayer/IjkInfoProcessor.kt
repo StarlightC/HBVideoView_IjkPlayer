@@ -16,7 +16,7 @@ class IjkInfoProcessor: InfoProcessor {
      * 返回InfoProcessor名称
      */
     override fun getName(): String {
-        return Constant.IJK_INFO_PROCESSOR
+        return Constant.IJKPLAYER
     }
 
     /**

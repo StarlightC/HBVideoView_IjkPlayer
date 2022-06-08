@@ -12,7 +12,7 @@ import tv.danmaku.ijk.media.player.IMediaPlayer
  */
 class IjkErrorProcessor: ErrorProcessor {
     override fun getName(): String {
-        return Constant.IJK_ERROR_PROCESSOR
+        return Constant.IJKPLAYER
     }
 
     override fun process(what: Int, extra: Int): Int {
